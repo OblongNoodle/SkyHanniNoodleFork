@@ -88,14 +88,22 @@ object MobHighlight {
         if (entity is EntityEnderman) {
             val isZealot = maxHealth == 13_000 || maxHealth == 13_000 * 4 // runic
             val isBruiser = maxHealth == 65_000 || maxHealth == 65_000 * 4 // runic
+            val isSeer = maxHealth == 9_500 || maxHealth == 9_500 * 4 // runic
 
-            if (!(isZealot || isBruiser)) return
+            if (!(isZealot || isBruiser || isSeer)) return
 
-            if (config.zealotBruiserHighlighter) {
+            if (config.zealotBruiserHighlighter && (isZealot || isBruiser)) {
                 RenderLivingEntityHelper.setEntityColorWithNoHurtTime(
                     entity,
                     LorenzColor.DARK_AQUA.toColor().addAlpha(127),
                 ) { config.zealotBruiserHighlighter }
+            }
+
+            if (config.seerHighlighter && isSeer) {
+                RenderLivingEntityHelper.setEntityColorWithNoHurtTime(
+                    entity,
+                    LorenzColor.YELLOW.toColor().addAlpha(127),
+                ) { config.seerHighlighter }
             }
 
             val heldItem = entity.getBlockInHand()?.block
