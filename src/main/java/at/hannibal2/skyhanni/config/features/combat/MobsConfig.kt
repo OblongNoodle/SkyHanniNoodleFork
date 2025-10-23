@@ -49,7 +49,7 @@ class MobsConfig {
     @FeatureToggle
     var specialZealotHighlighter: Boolean = true
 
-        @Expose
+    @Expose
     @ConfigOption(name = "Seer", desc = "Highlight Seers in The End.")
     @ConfigEditorBoolean
     @FeatureToggle
