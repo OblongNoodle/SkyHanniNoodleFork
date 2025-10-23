@@ -49,6 +49,12 @@ class MobsConfig {
     @FeatureToggle
     var specialZealotHighlighter: Boolean = true
 
+        @Expose
+    @ConfigOption(name = "Seer", desc = "Highlight Seers in The End.")
+    @ConfigEditorBoolean
+    @FeatureToggle
+    var seerHighlighter: Boolean = false
+
     @Expose
     @ConfigOption(name = "Corrupted Mob", desc = "Highlight corrupted mobs in purple color.")
     @ConfigEditorBoolean
