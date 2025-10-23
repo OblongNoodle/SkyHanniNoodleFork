@@ -1,7 +1,7 @@
 [
     {
         "modid": "skyhanni",
-        "name": "SkyHanni",
+        "name": "NoodleModhanni",
         "description": "Hypixel SkyBlock Mod",
         "version": "${version}",
         "mcversion": "1.8.9",
